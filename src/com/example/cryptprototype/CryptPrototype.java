@@ -1,7 +1,7 @@
 package com.example.cryptprototype;
 
 import java.util.Date;
-
+import com.example.cryptprototype.webservlet.CommonUtilities;
 import com.example.cryptprototype.messages.DateFormatter;
 import com.example.cryptprototype.messages.MessageCryptor;
 import com.example.cryptprototype.messages.MessageProvider;
@@ -63,11 +63,11 @@ public class CryptPrototype extends Activity {
 			GCMRegistrar.checkManifest(context);
 			final String regId = GCMRegistrar.getRegistrationId(context);
 			if (regId.equals("")) {
-				GCMRegistrar.register(context, "123450000"); //SENDER_ID instead of "123450000"
+				GCMRegistrar.register(context, "458779572003"); //SENDER_ID = #project id
 				Toast.makeText(context, regId , Toast.LENGTH_LONG).show();
 			} else {
-				//Log.v(TAG, "Already registered");
-				Toast.makeText(context, "Already registered" , Toast.LENGTH_LONG).show();
+				Log.v(CommonUtilities.TAG, "Already registered");
+				//Toast.makeText(context, "Already registered" , Toast.LENGTH_LONG).show();
 			}
 			
 		}
